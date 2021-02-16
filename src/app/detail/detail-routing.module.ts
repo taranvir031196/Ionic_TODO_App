@@ -5,7 +5,7 @@ import { DetailPage } from './detail.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path:'',
     component: DetailPage
   }
 ];

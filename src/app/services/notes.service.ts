@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { runInThisContext } from 'vm';
-import { SHARE_ENV } from 'worker_threads';
+import { Storage } from '@ionic/storage';
 import { Note } from '../interfaces/note';
 
 @Injectable({
@@ -22,7 +21,7 @@ export class NotesService {
     this.storage.get('notes').then((notes) =>{
 
             if(notes!=null){
-              this.notes = notes
+              this.notes = notes;
             }
           
           this.loaded = true;
@@ -33,7 +32,7 @@ export class NotesService {
 
   save(): void{
 
-    this.storage.set('notes', this.notes)
+    this.storage.set('notes', this.notes);
 
   }
 
@@ -49,7 +48,6 @@ export class NotesService {
       id: id.toString(),
       title: title,
       content: ''
-
     });
 
     this.save();
