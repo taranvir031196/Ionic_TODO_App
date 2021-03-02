@@ -7,21 +7,22 @@ import { Note } from '../interfaces/note';
 })
 export class NotesService {
 
-  public notes: Note[] = [];
+  public notes: Note[]=[];
   public loaded: boolean = false;
 
   constructor(private storage: Storage){
-
+        
   }
 
   load(): Promise<boolean> {
 
     return new Promise((resolve)=> {
-
+    
     this.storage.get('notes').then((notes) =>{
 
             if(notes!=null){
               this.notes = notes;
+              console.log(notes);
             }
           
           this.loaded = true;
@@ -32,8 +33,12 @@ export class NotesService {
 
   save(): void{
 
-    this.storage.set('notes', this.notes);
-
+    this.storage.ready().then(()=>{
+      
+      console.log('Storage is ready');
+      this.storage.set('notes', this.notes);
+      console.log(this.notes);
+    });
   }
 
   getNote(id): Note{
@@ -43,6 +48,7 @@ export class NotesService {
 
   createNote(title): void{
     let id = Math.max(...this.notes.map(note => parseInt(note.id)), 0) + 1;
+    console.log(id);
 
     this.notes.push({
       id: id.toString(),

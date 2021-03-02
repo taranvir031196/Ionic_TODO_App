@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { Note } from '../interfaces/note';
 import { NotesService } from '../services/notes.service';
 
 @Component({

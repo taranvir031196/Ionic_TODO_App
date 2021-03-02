@@ -1,16 +1,15 @@
 <ion-header>
-  <ion-toolbar>
     <ion-toolbar color ="primary">
       <ion-buttons slots="start">
         <ion-back-button defaulthref="/notes"></ion-back-button>
       </ion-buttons>
       <ion-title>{{ note.title }}</ion-title>
-      <ion-button slot="end">
+      <ion-buttons slot="end">
         <ion-button (click)="deleteNote()">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-button>
       </ion-buttons>
-    </ion-toolbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">

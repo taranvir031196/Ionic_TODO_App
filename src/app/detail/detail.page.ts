@@ -14,7 +14,7 @@ export class DetailPage implements OnInit {
 
   public note: Note;
 
-  constructor(private route: ActivatedRoute, private noteService: NotesService, private navCtrl: NavController) { 
+  constructor(private route: ActivatedRoute, public noteService: NotesService, private navCtrl: NavController) { 
 
     //Initialized a placeholder note
 
@@ -45,7 +45,7 @@ export class DetailPage implements OnInit {
       this.noteService.save();
     }
 
-    deletNote(){
+    deleteNote(){
       this.noteService.deleteNote(this.note);
       this.navCtrl.navigateBack('/notes');
     }
