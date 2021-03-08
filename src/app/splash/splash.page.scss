@@ -1,0 +1,17 @@
+ion-content{
+    --background: blue;
+}
+
+.container{
+
+    .rotate-center{-webkit-animation:rotate-center 1s ease-in-out both;animation:rotate-center 1s ease-in-out both}
+
+    img{
+        height: 70px;
+        width: 70px;
+        margin-top: 60%; 
+        margin-left: 60%;
+        margin-right: 60%; 
+        
+    }
+}

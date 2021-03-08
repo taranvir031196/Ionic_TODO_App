@@ -5,7 +5,11 @@ const routes: Routes = [
   
 {path: "", redirectTo: "notes", pathMatch: "full" },
 {path: "notes" , loadChildren: () => import('src/app/home/home.module').then(m => m.HomePageModule)},   
-{path: "notes/:id", loadChildren: () => import ('src/app/detail/detail.module').then(m => m.DetailPageModule)}
+{path: "notes/:id", loadChildren: () => import ('src/app/detail/detail.module').then(m => m.DetailPageModule)},  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  }
+
 ];
 
 @NgModule({
